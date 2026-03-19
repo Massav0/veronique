@@ -1,0 +1,521 @@
+/* ================================================================
+   VÉRONIQUE — collection.css
+   Page collection uniquement
+================================================================ */
+
+
+/* ================================================================
+   EN-TÊTE PAGE
+================================================================ */
+
+.page-header {
+  padding: calc(var(--nav-h) + 4rem) 3.5rem 4rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  gap: 3rem;
+  border-bottom: var(--border-or);
+  position: relative;
+  background: var(--noir-soft);
+}
+
+/* Ligne lumineuse haut */
+.page-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--rouge-vif), var(--or), transparent);
+  opacity: 0.4;
+}
+
+.page-header-title {
+  font-family: var(--font-s);
+  font-size: clamp(2.8rem, 6.5vw, 6rem);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--blanc);
+  margin: 0.8rem 0 1.2rem;
+}
+
+.page-header-title em {
+  font-style: italic;
+  background: linear-gradient(135deg, var(--or), var(--or-pale));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.page-header-sub {
+  font-family: var(--font-s);
+  font-size: 1rem;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.8;
+  color: var(--blanc-70);
+}
+
+/* Stats rapides */
+.page-header-stats {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1.2rem;
+  padding-bottom: 0.3rem;
+}
+
+.h-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.2rem;
+}
+
+.h-stat-num {
+  font-family: var(--font-s);
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  font-weight: 700;
+  font-style: italic;
+  line-height: 1;
+  background: linear-gradient(135deg, var(--rouge-vif), var(--or-vif));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.h-stat-label {
+  font-family: var(--font-ui);
+  font-size: 0.5rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--blanc-40);
+}
+
+.h-stat-sep {
+  width: 28px;
+  height: 1px;
+  background: rgba(200,146,42,0.2);
+  align-self: flex-end;
+}
+
+
+/* ================================================================
+   FILTRES — radio CSS pur
+================================================================ */
+
+.galerie-section {
+  padding: 0 3.5rem 6rem;
+}
+
+.f-input { display: none; }
+
+.filtres {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  padding: 2.5rem 0 3rem;
+  border-bottom: var(--border-or);
+  margin-bottom: 3rem;
+}
+
+.filtre {
+  font-family: var(--font-ui);
+  font-size: 0.58rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--blanc-40);
+  padding: 0.55rem 1.3rem;
+  border: 1px solid rgba(245,237,224,0.1);
+  cursor: pointer;
+  transition: color var(--t-fast), border-color var(--t-fast), background var(--t-fast);
+  white-space: nowrap;
+}
+
+.filtre:hover {
+  color: var(--blanc);
+  border-color: rgba(245,237,224,0.22);
+}
+
+/* Filtre actif */
+#f-tout:checked     ~ .filtres label[for="f-tout"],
+#f-noeud:checked    ~ .filtres label[for="f-noeud"],
+#f-collier:checked  ~ .filtres label[for="f-collier"],
+#f-boucles:checked  ~ .filtres label[for="f-boucles"],
+#f-bracelet:checked ~ .filtres label[for="f-bracelet"] {
+  background: var(--or);
+  color: var(--noir);
+  border-color: var(--or);
+}
+
+/* Filtrage CSS pur */
+#f-noeud:checked    ~ .galerie .cat-collier,
+#f-noeud:checked    ~ .galerie .cat-boucles,
+#f-noeud:checked    ~ .galerie .cat-bracelet { display: none; }
+
+#f-collier:checked  ~ .galerie .cat-noeud,
+#f-collier:checked  ~ .galerie .cat-boucles,
+#f-collier:checked  ~ .galerie .cat-bracelet { display: none; }
+
+#f-boucles:checked  ~ .galerie .cat-noeud,
+#f-boucles:checked  ~ .galerie .cat-collier,
+#f-boucles:checked  ~ .galerie .cat-bracelet { display: none; }
+
+#f-bracelet:checked ~ .galerie .cat-noeud,
+#f-bracelet:checked ~ .galerie .cat-collier,
+#f-bracelet:checked ~ .galerie .cat-boucles  { display: none; }
+
+
+/* ================================================================
+   GALERIE — grille masonry
+================================================================ */
+
+.galerie {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 340px;
+  gap: 1rem;
+}
+
+.card--tall { grid-row: span 2; }
+.card--wide { grid-column: span 2; }
+
+.card {
+  background: var(--noir-card);
+  border: 1px solid rgba(200,146,42,0.07);
+  overflow: hidden;
+  transition: border-color var(--t);
+}
+
+.card:hover { border-color: rgba(200,146,42,0.28); }
+
+.card-link {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card-img {
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+  min-height: 0;
+}
+
+.card-img img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.85s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  display: block;
+}
+
+.card:hover .card-img img { transform: scale(1.06); }
+
+/* Overlay hover */
+.card-hover {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top,
+    rgba(107,15,26,0.65) 0%,
+    rgba(7,5,10,0.2)     50%,
+    transparent          100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--t);
+}
+
+.card:hover .card-hover { opacity: 1; }
+
+.card-loupe {
+  width: 50px; height: 50px;
+  border: 1px solid rgba(200,146,42,0.5);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: var(--or-pale);
+  transform: scale(0.75);
+  transition: transform var(--t);
+}
+
+.card:hover .card-loupe { transform: scale(1); }
+
+/* Infos */
+.card-info {
+  padding: 0.85rem 1rem 1rem;
+  background: var(--noir-card);
+  border-top: 1px solid rgba(200,146,42,0.07);
+  flex-shrink: 0;
+}
+
+.card-cat {
+  font-family: var(--font-ui);
+  font-size: 0.5rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--rouge-vif);
+  margin-bottom: 0.25rem;
+}
+
+.card-nom {
+  font-family: var(--font-s);
+  font-size: 1rem;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--blanc);
+  margin-bottom: 0.15rem;
+}
+
+.card-detail {
+  font-family: var(--font-ui);
+  font-size: 0.5rem;
+  letter-spacing: 0.12em;
+  color: var(--blanc-40);
+}
+
+
+/* ================================================================
+   LIGHTBOX — CSS :target
+================================================================ */
+
+.lb {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+
+.lb:target {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+}
+
+.lb-bg {
+  position: absolute;
+  inset: 0;
+  background: rgba(7,5,10,0.93);
+  backdrop-filter: blur(10px);
+}
+
+.lb-box {
+  position: relative;
+  z-index: 1;
+  max-width: 88vw;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.4rem;
+  animation: lb-pop 0.38s cubic-bezier(0.16,1,0.3,1) forwards;
+}
+
+@keyframes lb-pop {
+  from { transform: scale(0.93); opacity: 0; }
+  to   { transform: scale(1);    opacity: 1; }
+}
+
+.lb-box img {
+  max-width: 100%;
+  max-height: 74vh;
+  object-fit: contain;
+  border: 1px solid rgba(200,146,42,0.18);
+  box-shadow:
+    0 0 80px rgba(107,15,26,0.35),
+    0 0 30px rgba(200,146,42,0.12);
+}
+
+.lb-close {
+  position: absolute;
+  top: -2.8rem; right: 0;
+  font-family: var(--font-s);
+  font-size: 2.2rem;
+  font-weight: 300;
+  color: var(--blanc-40);
+  line-height: 1;
+  transition: color var(--t-fast);
+}
+
+.lb-close:hover { color: var(--or); }
+
+.lb-caption { text-align: center; }
+
+.lb-nom {
+  font-family: var(--font-s);
+  font-size: 1.2rem;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--blanc);
+  margin-bottom: 0.3rem;
+}
+
+.lb-det {
+  font-family: var(--font-ui);
+  font-size: 0.55rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--or);
+}
+
+
+/* ================================================================
+   CTA COMMANDE
+================================================================ */
+
+.coll-cta {
+  padding: 6rem 3.5rem;
+  text-align: center;
+  background: var(--noir-soft);
+  border-top: var(--border-or);
+  position: relative;
+  overflow: hidden;
+}
+
+.coll-cta::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 65% 80% at 50% 50%, rgba(107,15,26,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.coll-cta-inner {
+  max-width: 560px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.coll-cta-sub {
+  font-family: var(--font-s);
+  font-size: 1rem;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.9;
+  color: var(--blanc-70);
+  margin-bottom: 2.5rem;
+}
+
+.coll-cta-btns {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-wa {
+  border-color: rgba(37,211,102,0.4);
+  color: #4ade80;
+}
+
+.btn-wa::before { background: #25D366; }
+.btn-wa:hover   { color: var(--noir); box-shadow: 0 0 20px rgba(37,211,102,0.25); }
+
+
+/* ================================================================
+   RESPONSIVE
+================================================================ */
+
+/* ── Tablette ── */
+@media (max-width: 1024px) {
+  .page-header    { padding: calc(var(--nav-h) + 3rem) 2.5rem 3rem; grid-template-columns: 1fr; }
+  .page-header-stats { flex-direction: row; align-items: center; justify-content: flex-start;
+                       flex-wrap: wrap; gap: 1.5rem; margin-top: 1.5rem; }
+  .h-stat         { align-items: flex-start; }
+  .h-stat-sep     { width: 1px; height: 28px; }
+
+  .galerie-section { padding: 0 2.5rem 5rem; }
+  .galerie        { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 300px; }
+  .card--wide     { grid-column: span 2; }
+  .card--tall     { grid-row: span 2; }
+
+  .coll-cta       { padding: 5rem 2.5rem; }
+}
+
+/* ── Mobile ── */
+@media (max-width: 768px) {
+  /* Header centré */
+  .page-header {
+    padding: calc(var(--nav-h) + 2rem) 1.5rem 2.5rem;
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .page-header-stats {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 0;
+    margin-top: 1.5rem;
+  }
+
+  .h-stat         { align-items: center; flex: 1; }
+  .h-stat-sep     { width: 1px; height: 32px; flex-shrink: 0; }
+
+  /* Filtres — scroll horizontal */
+  .galerie-section { padding: 0 0 4rem; }
+
+  .filtres {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 1.8rem 1.5rem 1.8rem;
+    gap: 0.4rem;
+    margin-bottom: 0;
+    /* Cache la scrollbar */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .filtres::-webkit-scrollbar { display: none; }
+
+  /* Ligne séparatrice après les filtres */
+  .galerie-section::before {
+    content: '';
+    display: block;
+    height: 1px;
+    margin: 0 1.5rem 2rem;
+    background: var(--border-or);
+  }
+
+  /* Grille 2 colonnes sur mobile, hauteur fixe */
+  .galerie {
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 220px;
+    gap: 0.6rem;
+    padding: 0 1.5rem;
+  }
+
+  /* Annuler le span sur mobile — toutes les cartes même taille */
+  .card--tall { grid-row: span 1; }
+  .card--wide { grid-column: span 2; }
+
+  /* Infos carte compactes */
+  .card-info  { padding: 0.6rem 0.7rem 0.7rem; }
+  .card-nom   { font-size: 0.88rem; }
+  .card-detail { display: none; } /* trop petit sur mobile */
+
+  /* CTA centré */
+  .coll-cta { padding: 4rem 1.5rem; }
+  .coll-cta-btns { flex-direction: column; align-items: center; }
+  .coll-cta-btns .btn { width: 100%; max-width: 280px; justify-content: center; }
+
+  /* Lightbox plein écran mobile */
+  .lb-box     { max-width: 96vw; }
+  .lb-box img { max-height: 65vh; }
+  .lb-close   { top: -2.2rem; font-size: 1.8rem; }
+}
+
+/* ── Très petit ── */
+@media (max-width: 380px) {
+  .page-header { padding: calc(var(--nav-h) + 1.5rem) 1.2rem 2rem; }
+  .galerie     { grid-auto-rows: 180px; gap: 0.5rem; padding: 0 1.2rem; }
+  .coll-cta    { padding: 3.5rem 1.2rem; }
+}

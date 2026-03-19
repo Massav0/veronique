@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — VÉRONIQUE</title>
+  <meta name="description" content="Contactez Collection Véronique — Commandes, collaborations, presse. Nous vous répondons sous 48h.">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/contact.css') }}">
+</head>
+<body>
+
+<!-- ============================================================
+     NAVIGATION
+============================================================ -->
+<nav class="nav nav--solid">
+  <div class="nav-logo">
+    <a href="{{ url_for('index') }}">VÉRONIQUE</a>
+    <span class="nav-logo-sub">Collection</span>
+  </div>
+  <input type="checkbox" id="navToggle" class="nav-toggle">
+  <label for="navToggle" class="nav-burger" aria-label="Menu">
+    <span></span><span></span>
+  </label>
+  <ul class="nav-links">
+    <li><a href="{{ url_for('index') }}"          class="nav-link">Accueil</a></li>
+    <li><a href="{{ url_for('collection') }}"     class="nav-link">Collection</a></li>
+    <li><a href="{{ url_for('transformation') }}" class="nav-link">Transformation</a></li>
+    <li><a href="{{ url_for('atelier') }}"        class="nav-link">Atelier</a></li>
+    <li><a href="{{ url_for('contact') }}"        class="nav-link active nav-link--cta">Contact</a></li>
+  </ul>
+</nav>
+
+
+<!-- ============================================================
+     CORPS PRINCIPAL — 2 colonnes
+============================================================ -->
+<main class="contact-main">
+
+  <!-- ── Colonne gauche — infos ── -->
+  <aside class="contact-aside">
+
+    <div class="contact-aside-inner">
+      <span class="section-label">Nous trouver</span>
+      <h1 class="contact-title">
+        Parlons<br><em>création.</em>
+      </h1>
+      <p class="contact-intro">
+        Commande, collaboration, presse ou simple curiosité —
+        chaque message est lu avec attention.
+        Réponse sous 48h.
+      </p>
+
+      <div class="gold-line"></div>
+
+      <!-- Canaux directs -->
+      <div class="contact-canaux">
+
+        <a href="https://wa.me/22900000000?text=Bonjour%20Collection%20Véronique,"
+           target="_blank" rel="noopener" class="canal">
+          <div class="canal-icon canal-icon--wa">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+          </div>
+          <div class="canal-info">
+            <p class="canal-label">WhatsApp</p>
+            <p class="canal-val">+229 00 00 00 00</p>
+          </div>
+          <span class="canal-arrow">→</span>
+        </a>
+
+        <a href="mailto:contact@collection-veronique.com" class="canal">
+          <div class="canal-icon canal-icon--mail">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="2" y="4" width="20" height="16" rx="2"/>
+              <path d="M2 7l10 7 10-7" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="canal-info">
+            <p class="canal-label">Email</p>
+            <p class="canal-val">contact@collection-veronique.com</p>
+          </div>
+          <span class="canal-arrow">→</span>
+        </a>
+
+        <a href="https://instagram.com/" target="_blank" rel="noopener" class="canal">
+          <div class="canal-icon canal-icon--ig">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+            </svg>
+          </div>
+          <div class="canal-info">
+            <p class="canal-label">Instagram</p>
+            <p class="canal-val">@collection.veronique</p>
+          </div>
+          <span class="canal-arrow">→</span>
+        </a>
+
+      </div>
+
+      <!-- Localisation -->
+      <div class="contact-lieu">
+        <p class="contact-lieu-label">Atelier</p>
+        <p class="contact-lieu-ville">Cotonou, Bénin</p>
+        <p class="contact-lieu-detail">Visites sur rendez-vous uniquement</p>
+      </div>
+
+    </div>
+  </aside>
+
+
+  <!-- ── Colonne droite — formulaire ── -->
+  <section class="contact-form-section">
+
+    <!-- Flash messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          <div class="form-flash form-flash--{{ category }}">
+            {{ message }}
+          </div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    <div class="contact-form-header">
+      <span class="section-label">Formulaire</span>
+      <h2 class="contact-form-title">Votre message</h2>
+    </div>
+
+    <form class="form" action="{{ url_for('contact') }}" method="POST" novalidate>
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+
+      <!-- Sujet — radio buttons CSS -->
+      <div class="form-group form-group--sujet">
+        <label class="form-label">Objet de votre demande</label>
+        <div class="sujet-options">
+          <input type="radio" name="sujet" id="s-commande"   value="Commande"       class="sujet-input" checked>
+          <input type="radio" name="sujet" id="s-collab"     value="Collaboration"  class="sujet-input">
+          <input type="radio" name="sujet" id="s-presse"     value="Presse"         class="sujet-input">
+          <input type="radio" name="sujet" id="s-autre"      value="Autre"          class="sujet-input">
+          <label for="s-commande"  class="sujet-label">Commande</label>
+          <label for="s-collab"    class="sujet-label">Collaboration</label>
+          <label for="s-presse"    class="sujet-label">Presse</label>
+          <label for="s-autre"     class="sujet-label">Autre</label>
+        </div>
+      </div>
+
+      <!-- Nom + Email -->
+      <div class="form-row">
+        <div class="form-group">
+          <label for="nom" class="form-label">Nom complet <span class="required">*</span></label>
+          <input type="text" id="nom" name="nom" class="form-input"
+                 placeholder="Votre nom" required
+                 value="{{ form_data.get('nom', '') if form_data else '' }}">
+        </div>
+        <div class="form-group">
+          <label for="email" class="form-label">Email <span class="required">*</span></label>
+          <input type="email" id="email" name="email" class="form-input"
+                 placeholder="votre@email.com" required
+                 value="{{ form_data.get('email', '') if form_data else '' }}">
+        </div>
+      </div>
+
+      <!-- Téléphone -->
+      <div class="form-group">
+        <label for="telephone" class="form-label">Téléphone / WhatsApp</label>
+        <input type="tel" id="telephone" name="telephone" class="form-input"
+               placeholder="+229 00 00 00 00"
+               value="{{ form_data.get('telephone', '') if form_data else '' }}">
+      </div>
+
+      <!-- Message -->
+      <div class="form-group">
+        <label for="message" class="form-label">Message <span class="required">*</span></label>
+        <textarea id="message" name="message" class="form-textarea"
+                  placeholder="Décrivez votre demande, la pièce qui vous intéresse, votre projet..."
+                  rows="6" required>{{ form_data.get('message', '') if form_data else '' }}</textarea>
+      </div>
+
+      <!-- Erreurs -->
+      {% if erreurs %}
+        <div class="form-erreurs">
+          {% for e in erreurs %}
+            <p class="form-erreur">{{ e }}</p>
+          {% endfor %}
+        </div>
+      {% endif %}
+
+      <!-- Submit -->
+      <div class="form-submit">
+        <button type="submit" class="btn btn-submit">
+          <span>Envoyer le message</span>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+          </svg>
+        </button>
+        <p class="form-note">Réponse garantie sous 48h</p>
+      </div>
+
+    </form>
+  </section>
+
+</main>
+
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <p class="footer-brand-name">Véronique</p>
+      <p class="footer-brand-tag">Collection</p>
+      <p class="footer-brand-desc">
+        Bijoux artisanaux en canettes recyclées,<br>
+        fabriqués à la main au Bénin.
+      </p>
+    </div>
+    <div>
+      <p class="footer-col-title">Navigation</p>
+      <ul class="footer-col-links">
+        <li><a href="{{ url_for('index') }}">Accueil</a></li>
+        <li><a href="{{ url_for('collection') }}">Collection</a></li>
+        <li><a href="{{ url_for('transformation') }}">Transformation</a></li>
+        <li><a href="{{ url_for('atelier') }}">Atelier</a></li>
+        <li><a href="{{ url_for('contact') }}">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-col-title">Nous suivre</p>
+      <div class="footer-social">
+        <a href="https://wa.me/22900000000" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </a>
+        <a href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+        <a href="https://tiktok.com/" target="_blank" rel="noopener" aria-label="TikTok">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.75a4.85 4.85 0 01-1.01-.06z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Collection Véronique. Tous droits réservés.</p>
+    <p>Créé par <span>Djangoun Zinli Roberto</span></p>
+  </div>
+</footer>
+
+</body>
+</html>

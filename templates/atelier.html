@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atelier — VÉRONIQUE</title>
+  <meta name="description" content="L'atelier Véronique — Découvrez les coulisses de la création. Processus, savoir-faire et passion du bijou artisanal.">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/atelier.css') }}">
+</head>
+<body>
+
+<!-- ============================================================
+     NAVIGATION
+============================================================ -->
+<nav class="nav nav--solid">
+  <div class="nav-logo">
+    <a href="{{ url_for('index') }}">VÉRONIQUE</a>
+    <span class="nav-logo-sub">Collection</span>
+  </div>
+  <input type="checkbox" id="navToggle" class="nav-toggle">
+  <label for="navToggle" class="nav-burger" aria-label="Menu">
+    <span></span><span></span>
+  </label>
+  <ul class="nav-links">
+    <li><a href="{{ url_for('index') }}"          class="nav-link">Accueil</a></li>
+    <li><a href="{{ url_for('collection') }}"     class="nav-link">Collection</a></li>
+    <li><a href="{{ url_for('transformation') }}" class="nav-link">Transformation</a></li>
+    <li><a href="{{ url_for('atelier') }}"        class="nav-link active">Atelier</a></li>
+    <li><a href="{{ url_for('contact') }}"        class="nav-link nav-link--cta">Contact</a></li>
+  </ul>
+</nav>
+
+
+<!-- ============================================================
+     HERO ATELIER — Image plein écran
+============================================================ -->
+<section class="atelier-hero">
+  <div class="atelier-hero-media">
+    <img src="{{ url_for('static', filename='images/atelier.jpg') }}"
+         alt="L'atelier Véronique" class="atelier-hero-img">
+    <div class="atelier-hero-overlay"></div>
+  </div>
+  <div class="atelier-hero-content">
+    <span class="section-label">Coulisses</span>
+    <h1 class="atelier-hero-title">
+      L'<em>Atelier</em>
+    </h1>
+    <p class="atelier-hero-sub">
+      Là où la matière devient identité.
+    </p>
+  </div>
+  <div class="atelier-hero-scroll">
+    <div class="atelier-hero-scroll-bar"></div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     INTRO — Citation + chiffres
+============================================================ -->
+<section class="atelier-intro">
+  <div class="atelier-intro-quote">
+    <span class="quote-mark">"</span>
+    <blockquote>
+      Chaque canette qu'on récupère,<br>
+      c'est une histoire qu'on choisit<br>
+      de ne pas laisser mourir.
+    </blockquote>
+    <cite>— Véronique</cite>
+  </div>
+  <div class="atelier-intro-chiffres">
+    <div class="chiffre">
+      <span class="chiffre-num">8h</span>
+      <span class="chiffre-label">Par pièce en moyenne</span>
+    </div>
+    <div class="chiffre-sep"></div>
+    <div class="chiffre">
+      <span class="chiffre-num">3</span>
+      <span class="chiffre-label">Artisans</span>
+    </div>
+    <div class="chiffre-sep"></div>
+    <div class="chiffre">
+      <span class="chiffre-num">0</span>
+      <span class="chiffre-label">Machine industrielle</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     PROCESSUS — Étapes de création
+============================================================ -->
+<section class="processus">
+  <div class="processus-header">
+    <span class="section-label">Savoir-faire</span>
+    <h2 class="section-title">Le processus<br><em>de création.</em></h2>
+  </div>
+
+  <div class="processus-steps">
+
+    <div class="step">
+      <div class="step-num">01</div>
+      <div class="step-img">
+        <img src="{{ url_for('static', filename='images/step1.jpg') }}"
+             alt="Collecte des canettes" loading="lazy">
+      </div>
+      <div class="step-content">
+        <h3 class="step-title">La collecte</h3>
+        <p class="step-body">
+          Tout commence dans les rues de Cotonou. Les canettes sont
+          ramassées, triées, nettoyées. Seules les meilleures —
+          sans déformation, sans rouille — sont gardées.
+        </p>
+      </div>
+    </div>
+
+    <div class="step step--reverse">
+      <div class="step-num">02</div>
+      <div class="step-img">
+        <img src="{{ url_for('static', filename='images/step2.jpg') }}"
+             alt="Découpe et façonnage" loading="lazy">
+      </div>
+      <div class="step-content">
+        <h3 class="step-title">La découpe</h3>
+        <p class="step-body">
+          Chaque canette est découpée à la main avec des ciseaux
+          spéciaux. L'aluminium est ensuite aplati, mis en forme,
+          repié. Un travail de précision qui exige des heures.
+        </p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">03</div>
+      <div class="step-img">
+        <img src="{{ url_for('static', filename='images/step3.jpg') }}"
+             alt="Assemblage et tissage" loading="lazy">
+      </div>
+      <div class="step-content">
+        <h3 class="step-title">L'assemblage</h3>
+        <p class="step-body">
+          Les pièces découpées sont tissées, nouées, assemblées
+          une à une. C'est dans cette étape que la forme naît —
+          nœud papillon, collier, bracelet — selon une gestuelle
+          transmise et perfectionnée.
+        </p>
+      </div>
+    </div>
+
+    <div class="step step--reverse">
+      <div class="step-num">04</div>
+      <div class="step-img">
+        <img src="{{ url_for('static', filename='images/step4.jpg') }}"
+             alt="Finition et contrôle" loading="lazy">
+      </div>
+      <div class="step-content">
+        <h3 class="step-title">La finition</h3>
+        <p class="step-body">
+          Chaque pièce est inspectée, ajustée, polie. Les bords
+          sont lissés pour le confort. La solidité est testée.
+          Seule une pièce irréprochable quitte l'atelier.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ============================================================
+     GALERIE BACKSTAGE — Grille photos
+============================================================ -->
+<section class="backstage">
+  <div class="backstage-header">
+    <span class="section-label">Backstage</span>
+    <h2 class="section-title">Dans<br><em>l'atelier.</em></h2>
+  </div>
+
+  <div class="backstage-grid">
+
+    <div class="bs-card bs-card--tall">
+      <img src="{{ url_for('static', filename='images/atelier.jpg') }}"
+           alt="Mains à l'œuvre" loading="lazy">
+      <div class="bs-overlay">
+        <p>Mains à l'œuvre</p>
+      </div>
+    </div>
+
+    <div class="bs-card">
+      <img src="{{ url_for('static', filename='images/a2.jpg') }}"
+           alt="Outils de l'artisan" loading="lazy">
+      <div class="bs-overlay">
+        <p>Les outils</p>
+      </div>
+    </div>
+
+    <div class="bs-card">
+      <img src="{{ url_for('static', filename='images/a3.jpg') }}"
+           alt="Canettes prêtes" loading="lazy">
+      <div class="bs-overlay">
+        <p>La matière première</p>
+      </div>
+    </div>
+
+    <div class="bs-card bs-card--wide">
+      <img src="{{ url_for('static', filename='images/a1.jpg') }}"
+           alt="L'atelier vue d'ensemble" loading="lazy">
+      <div class="bs-overlay">
+        <p>L'atelier</p>
+      </div>
+    </div>
+
+    <div class="bs-card">
+      <img src="{{ url_for('static', filename='images/atelier.jpg') }}"
+           alt="Découpe précise" loading="lazy">
+      <div class="bs-overlay">
+        <p>La découpe</p>
+      </div>
+    </div>
+
+    <div class="bs-card bs-card--tall">
+      <img src="{{ url_for('static', filename='images/a2.jpg') }}"
+           alt="Assemblage final" loading="lazy">
+      <div class="bs-overlay">
+        <p>L'assemblage</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ============================================================
+     VALEURS — Ce qui nous guide
+============================================================ -->
+<section class="valeurs">
+  <div class="valeurs-inner">
+    <div class="valeurs-header">
+      <span class="section-label">Engagement</span>
+      <h2 class="section-title">Ce qui nous<br><em>guide.</em></h2>
+    </div>
+    <div class="valeurs-grid">
+
+      <div class="valeur">
+        <div class="valeur-icon">
+          <svg viewBox="0 0 40 40" fill="none">
+            <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1"/>
+            <path d="M12 20c0-4.4 3.6-8 8-8s8 3.6 8 8-3.6 8-8 8" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
+            <circle cx="20" cy="20" r="3" fill="currentColor" opacity="0.5"/>
+          </svg>
+        </div>
+        <h3 class="valeur-title">Recyclage</h3>
+        <p class="valeur-body">
+          Chaque bijou détourne des déchets de leur destin.
+          L'aluminium des canettes redevient matière noble.
+        </p>
+      </div>
+
+      <div class="valeur">
+        <div class="valeur-icon">
+          <svg viewBox="0 0 40 40" fill="none">
+            <path d="M20 8 L24 16 L33 17 L27 23 L28 32 L20 28 L12 32 L13 23 L7 17 L16 16 Z"
+                  stroke="currentColor" stroke-width="1" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3 class="valeur-title">Artisanat</h3>
+        <p class="valeur-body">
+          Aucune machine. Chaque geste est humain,
+          chaque pièce porte la trace des mains qui l'ont créée.
+        </p>
+      </div>
+
+      <div class="valeur">
+        <div class="valeur-icon">
+          <svg viewBox="0 0 40 40" fill="none">
+            <path d="M20 10 Q28 18 20 30 Q12 18 20 10Z" stroke="currentColor" stroke-width="1"/>
+            <path d="M10 20 Q18 12 30 20 Q18 28 10 20Z" stroke="currentColor" stroke-width="1"/>
+          </svg>
+        </div>
+        <h3 class="valeur-title">Identité</h3>
+        <p class="valeur-body">
+          Un bijou africain qui s'assume. Fait ici,
+          pour être porté partout. Avec fierté.
+        </p>
+      </div>
+
+      <div class="valeur">
+        <div class="valeur-icon">
+          <svg viewBox="0 0 40 40" fill="none">
+            <path d="M8 32 L8 16 L20 8 L32 16 L32 32 Z" stroke="currentColor" stroke-width="1" stroke-linejoin="round"/>
+            <path d="M16 32 L16 24 L24 24 L24 32" stroke="currentColor" stroke-width="1"/>
+          </svg>
+        </div>
+        <h3 class="valeur-title">Local</h3>
+        <p class="valeur-body">
+          Conçu et fabriqué au Bénin. Un savoir-faire
+          ancré dans le territoire, ouvert sur le monde.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     CTA FINAL
+============================================================ -->
+<section class="atelier-cta">
+  <div class="atelier-cta-inner">
+    <span class="section-label">Découvrir</span>
+    <h2 class="section-title">
+      Prêt à porter<br><em>un morceau d'histoire ?</em>
+    </h2>
+    <div class="atelier-cta-btns">
+      <a href="{{ url_for('collection') }}" class="btn">
+        <span>Voir la collection</span>
+      </a>
+      <a href="{{ url_for('contact') }}" class="btn btn--ghost">
+        <span>Nous contacter</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <p class="footer-brand-name">Véronique</p>
+      <p class="footer-brand-tag">Collection</p>
+      <p class="footer-brand-desc">
+        Bijoux artisanaux en canettes recyclées,<br>
+        fabriqués à la main au Bénin.
+      </p>
+    </div>
+    <div>
+      <p class="footer-col-title">Navigation</p>
+      <ul class="footer-col-links">
+        <li><a href="{{ url_for('index') }}">Accueil</a></li>
+        <li><a href="{{ url_for('collection') }}">Collection</a></li>
+        <li><a href="{{ url_for('transformation') }}">Transformation</a></li>
+        <li><a href="{{ url_for('atelier') }}">Atelier</a></li>
+        <li><a href="{{ url_for('contact') }}">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-col-title">Nous suivre</p>
+      <div class="footer-social">
+        <a href="https://wa.me/22900000000" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </a>
+        <a href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+        <a href="https://tiktok.com/" target="_blank" rel="noopener" aria-label="TikTok">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.75a4.85 4.85 0 01-1.01-.06z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Collection Véronique. Tous droits réservés.</p>
+    <p>Créé par <span>Djangoun Zinli Roberto</span></p>
+  </div>
+</footer>
+
+</body>
+</html>

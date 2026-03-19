@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VÉRONIQUE — Collection</title>
+  <meta name="description" content="Collection Véronique — Bijoux artisanaux en canettes recyclées. Art. Matière. Identité.">
+  <meta property="og:title" content="Collection Véronique">
+  <meta property="og:description" content="Bijoux artisanaux nés de canettes recyclées, fabriqués à la main au Bénin.">
+  <meta property="og:image" content="{{ url_for('static', filename='images/og.jpg') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+</head>
+<body>
+
+<!-- ============================================================
+     NAVIGATION
+============================================================ -->
+<nav class="nav" id="nav">
+  <div class="nav-logo">
+    <a href="{{ url_for('index') }}">VÉRONIQUE</a>
+    <span class="nav-logo-sub">Collection</span>
+  </div>
+
+  <input type="checkbox" id="navToggle" class="nav-toggle">
+  <label for="navToggle" class="nav-burger" aria-label="Menu">
+    <span></span><span></span>
+  </label>
+
+  <ul class="nav-links">
+    <li><a href="{{ url_for('index') }}"          class="nav-link active">Accueil</a></li>
+    <li><a href="{{ url_for('collection') }}"     class="nav-link">Collection</a></li>
+    <li><a href="{{ url_for('transformation') }}" class="nav-link">Transformation</a></li>
+    <li><a href="{{ url_for('atelier') }}"        class="nav-link">Atelier</a></li>
+    <li><a href="{{ url_for('contact') }}"        class="nav-link nav-link--cta">Contact</a></li>
+  </ul>
+</nav>
+
+
+<!-- ============================================================
+     HERO
+============================================================ -->
+<section class="hero">
+
+  <img class="hero-img"
+       src="{{ url_for('static', filename='images/banner.jpg') }}"
+       alt="Collection Véronique">
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <h1 class="hero-title">
+      <span class="hero-t1">Véro</span>
+      <span class="hero-t2">nique</span>
+    </h1>
+    <p class="hero-sub">
+      Matière réinventée.<br>Identité affirmée.
+    </p>
+    <div class="hero-btns">
+      <a href="{{ url_for('collection') }}" class="btn">
+        <span>Découvrir</span>
+        <svg width="13" height="13" viewBox="0 0 14 14" fill="none">
+          <path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </a>
+      <a href="{{ url_for('transformation') }}" class="btn btn--ghost">
+        <span>La Transformation</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="hero-scroll">
+    <span class="hero-scroll-label">Défiler</span>
+    <div class="hero-scroll-bar"></div>
+  </div>
+
+</section>
+
+
+<!-- ============================================================
+     MANIFESTE
+============================================================ -->
+<section class="manifeste">
+
+  <div class="manifeste-left">
+    <span class="section-label">Manifeste</span>
+    <h2 class="manifeste-title">
+      La mode naît<br>
+      <em>de ce qu'on<br>ose voir.</em>
+    </h2>
+    <div class="gold-line"></div>
+    <p class="manifeste-body">
+      Véronique ne crée pas des bijoux ordinaires.<br>
+      Elle révèle ce que la matière cache —<br>
+      canettes, aluminium, fragments —<br>
+      et les élève en œuvres portées.
+    </p>
+  </div>
+
+  <div class="manifeste-right">
+    <div class="stat">
+      <span class="stat-num">+50</span>
+      <span class="stat-label">Créations</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">100%</span>
+      <span class="stat-label">Recyclé & Artisanal</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">∞</span>
+      <span class="stat-label">Vision</span>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- ============================================================
+     APERÇU COLLECTION
+============================================================ -->
+<section class="apercu">
+
+  <div class="apercu-header">
+    <div>
+      <span class="section-label">Collection Véronique</span>
+      <h2 class="section-title">Chaque pièce,<br><em>une histoire.</em></h2>
+    </div>
+    <a href="{{ url_for('collection') }}" class="apercu-lien">
+      Voir toute la collection →
+    </a>
+  </div>
+
+  <div class="apercu-grid">
+
+    <article class="apercu-card">
+      <div class="apercu-card-img">
+        <img src="{{ url_for('static', filename='images/a.jpg') }}"
+             alt="L'Or du Sahel" loading="lazy">
+        <div class="apercu-card-cta">
+          <a href="{{ url_for('collection') }}">Explorer →</a>
+        </div>
+      </div>
+      <div class="apercu-card-info">
+        <p class="apercu-card-cat">Nœud papillon</p>
+        <h3 class="apercu-card-nom">L'Or du Sahel</h3>
+      </div>
+    </article>
+
+    <article class="apercu-card">
+      <div class="apercu-card-img">
+        <img src="{{ url_for('static', filename='images/rouge.jpg') }}"
+             alt="Feu de Brousse" loading="lazy">
+        <div class="apercu-card-cta">
+          <a href="{{ url_for('collection') }}">Explorer →</a>
+        </div>
+      </div>
+      <div class="apercu-card-info">
+        <p class="apercu-card-cat">Nœud papillon</p>
+        <h3 class="apercu-card-nom">Feu de Brousse</h3>
+      </div>
+    </article>
+
+    <article class="apercu-card">
+      <div class="apercu-card-img">
+        <img src="{{ url_for('static', filename='images/noir.jpg') }}"
+             alt="Reine du Delta" loading="lazy">
+        <div class="apercu-card-cta">
+          <a href="{{ url_for('collection') }}">Explorer →</a>
+        </div>
+      </div>
+      <div class="apercu-card-info">
+        <p class="apercu-card-cat">Collier</p>
+        <h3 class="apercu-card-nom">Reine du Delta</h3>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+
+<!-- ============================================================
+     TRANSFORMATION TEASER
+============================================================ -->
+<section class="transfo">
+
+  <div class="transfo-text">
+    <span class="section-label">Innovation</span>
+    <h2 class="section-title">
+      De la<br><em>matière brute</em><br>à l'œuvre.
+    </h2>
+    <div class="gold-line"></div>
+    <p class="transfo-desc">
+      Canettes récupérées. Aluminium découpé.<br>
+      Mains expertes. Chaque bijou naît<br>
+      d'un déchet sublimé.
+    </p>
+    <a href="{{ url_for('transformation') }}" class="btn">
+      <span>Voir la transformation</span>
+    </a>
+  </div>
+
+  <div class="transfo-visual">
+
+    <div class="transfo-item">
+      <span class="transfo-tag">Avant</span>
+      <div class="transfo-box">
+        <div class="transfo-box-placeholder">
+          <svg viewBox="0 0 60 60" fill="none">
+            <ellipse cx="30" cy="12" rx="12" ry="4" stroke="currentColor" stroke-width="1"/>
+            <rect x="18" y="12" width="24" height="36" rx="2" stroke="currentColor" stroke-width="1"/>
+            <ellipse cx="30" cy="48" rx="12" ry="4" stroke="currentColor" stroke-width="1"/>
+            <line x1="18" y1="20" x2="42" y2="20" stroke="currentColor" stroke-width="0.5" opacity="0.5"/>
+            <line x1="18" y1="28" x2="42" y2="28" stroke="currentColor" stroke-width="0.5" opacity="0.5"/>
+            <line x1="18" y1="36" x2="42" y2="36" stroke="currentColor" stroke-width="0.5" opacity="0.5"/>
+          </svg>
+          <p>Canette</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="transfo-arrow">
+      <svg viewBox="0 0 36 20" fill="none">
+        <path d="M0 10h32M24 2l8 8-8 8" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+      </svg>
+    </div>
+
+    <div class="transfo-item">
+      <span class="transfo-tag transfo-tag--or">Après</span>
+      <div class="transfo-box transfo-box--apres">
+        <div class="transfo-box-placeholder">
+          <svg viewBox="0 0 80 50" fill="none">
+            <path d="M10 25 Q20 10 30 20 Q40 30 50 20 Q60 10 70 25 Q60 40 50 30 Q40 20 30 30 Q20 40 10 25Z"
+                  stroke="currentColor" stroke-width="1.2" fill="none"/>
+            <circle cx="40" cy="25" r="4" stroke="currentColor" stroke-width="1"/>
+          </svg>
+          <p>Nœud papillon</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ============================================================
+     ATELIER TEASER
+============================================================ -->
+<section class="atelier">
+
+  <div class="atelier-img">
+    <img src="{{ url_for('static', filename='images/atelier.jpg') }}"
+         alt="L'atelier Véronique" loading="lazy">
+  </div>
+
+  <div class="atelier-content">
+    <span class="section-label">Atelier</span>
+    <h2 class="section-title">
+      Derrière<br>chaque <em>création.</em>
+    </h2>
+    <div class="gold-line"></div>
+    <p class="atelier-body">
+      L'atelier est là où tout commence —<br>
+      là où les mains pensent<br>
+      et le métal obéit.
+    </p>
+    <a href="{{ url_for('atelier') }}" class="btn">
+      <span>Entrer dans l'atelier</span>
+    </a>
+  </div>
+
+</section>
+
+
+<!-- ============================================================
+     VIRAL
+============================================================ -->
+<section class="viral">
+  <div class="viral-inner">
+    <span class="section-label">Partager</span>
+    <h2 class="viral-title">
+      Faites vivre<br><em>la collection.</em>
+    </h2>
+    <p class="viral-sub">
+      Un bijou vous inspire ? Partagez-le avec votre réseau.
+    </p>
+    <div class="viral-btns">
+      <a href="https://wa.me/?text=Découvrez%20la%20Collection%20Véronique%20!"
+         target="_blank" rel="noopener" class="viral-btn viral-btn--wa">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+        <span>WhatsApp</span>
+      </a>
+      <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="viral-btn viral-btn--ig">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+        </svg>
+        <span>Instagram</span>
+      </a>
+      <a href="https://www.tiktok.com/" target="_blank" rel="noopener" class="viral-btn viral-btn--tt">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+          <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.75a4.85 4.85 0 01-1.01-.06z"/>
+        </svg>
+        <span>TikTok</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+<footer class="footer">
+  <div class="footer-grid">
+
+    <div class="footer-brand">
+      <p class="footer-brand-name">Véronique</p>
+      <p class="footer-brand-tag">Collection</p>
+      <p class="footer-brand-desc">
+        Bijoux artisanaux en canettes recyclées,<br>
+        fabriqués à la main au Bénin.
+      </p>
+    </div>
+
+    <div>
+      <p class="footer-col-title">Navigation</p>
+      <ul class="footer-col-links">
+        <li><a href="{{ url_for('index') }}">Accueil</a></li>
+        <li><a href="{{ url_for('collection') }}">Collection</a></li>
+        <li><a href="{{ url_for('transformation') }}">Transformation</a></li>
+        <li><a href="{{ url_for('atelier') }}">Atelier</a></li>
+        <li><a href="{{ url_for('contact') }}">Contact</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <p class="footer-col-title">Nous suivre</p>
+      <div class="footer-social">
+        <a href="https://wa.me/22900000000" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+        </a>
+        <a href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+          </svg>
+        </a>
+        <a href="https://tiktok.com/" target="_blank" rel="noopener" aria-label="TikTok">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.75a4.85 4.85 0 01-1.01-.06z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 Collection Véronique. Tous droits réservés.</p>
+    <p>Créé par <span>Djangoun Zinli Roberto</span></p>
+  </div>
+</footer>
+
+</body>
+</html>

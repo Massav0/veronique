@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transformation — VÉRONIQUE</title>
+  <meta name="description" content="La transformation Véronique — De la canette recyclée au bijou unique. Découvrez le processus avant/après.">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/transformation.css') }}">
+</head>
+<body>
+
+<!-- ============================================================
+     NAVIGATION
+============================================================ -->
+<nav class="nav nav--solid">
+  <div class="nav-logo">
+    <a href="{{ url_for('index') }}">VÉRONIQUE</a>
+    <span class="nav-logo-sub">Collection</span>
+  </div>
+  <input type="checkbox" id="navToggle" class="nav-toggle">
+  <label for="navToggle" class="nav-burger" aria-label="Menu">
+    <span></span><span></span>
+  </label>
+  <ul class="nav-links">
+    <li><a href="{{ url_for('index') }}"          class="nav-link">Accueil</a></li>
+    <li><a href="{{ url_for('collection') }}"     class="nav-link">Collection</a></li>
+    <li><a href="{{ url_for('transformation') }}" class="nav-link active">Transformation</a></li>
+    <li><a href="{{ url_for('atelier') }}"        class="nav-link">Atelier</a></li>
+    <li><a href="{{ url_for('contact') }}"        class="nav-link nav-link--cta">Contact</a></li>
+  </ul>
+</nav>
+
+
+<!-- ============================================================
+     HERO TRANSFORMATION
+============================================================ -->
+<section class="tr-hero">
+  <div class="tr-hero-content">
+    <span class="section-label">Innovation</span>
+    <h1 class="tr-hero-title">
+      La<br><em>Trans&shy;for&shy;mation</em>
+    </h1>
+    <p class="tr-hero-sub">
+      Du déchet au bijou.<br>
+      Chaque canette a une seconde vie à offrir.
+    </p>
+  </div>
+
+  <!-- Visuel avant/après animé CSS -->
+  <div class="tr-hero-visual">
+    <div class="tr-hero-av">
+      <span class="tr-hero-tag">Avant</span>
+      <div class="tr-hero-img tr-hero-img--av">
+        <svg viewBox="0 0 100 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="50" cy="18" rx="22" ry="7" stroke="currentColor" stroke-width="1.2"/>
+          <rect x="28" y="18" width="44" height="124" rx="4" stroke="currentColor" stroke-width="1.2"/>
+          <ellipse cx="50" cy="142" rx="22" ry="7" stroke="currentColor" stroke-width="1.2"/>
+          <rect x="28" y="28" width="44" height="8" fill="currentColor" opacity="0.12"/>
+          <line x1="28" y1="50" x2="72" y2="50" stroke="currentColor" stroke-width="0.6" opacity="0.35"/>
+          <line x1="28" y1="75" x2="72" y2="75" stroke="currentColor" stroke-width="0.6" opacity="0.35"/>
+          <line x1="28" y1="100" x2="72" y2="100" stroke="currentColor" stroke-width="0.6" opacity="0.35"/>
+          <line x1="28" y1="125" x2="72" y2="125" stroke="currentColor" stroke-width="0.6" opacity="0.35"/>
+          <circle cx="50" cy="88" r="8" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+          <text x="50" y="92" text-anchor="middle" font-size="8" fill="currentColor" opacity="0.4" font-family="monospace">CAN</text>
+        </svg>
+      </div>
+    </div>
+
+    <div class="tr-hero-fleche">
+      <div class="tr-hero-fleche-line"></div>
+      <svg viewBox="0 0 20 20" fill="none" width="20">
+        <path d="M2 10h16M12 4l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </div>
+
+    <div class="tr-hero-ap">
+      <span class="tr-hero-tag tr-hero-tag--or">Après</span>
+      <div class="tr-hero-img tr-hero-img--ap">
+        <svg viewBox="0 0 140 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Nœud papillon détaillé -->
+          <path d="M18 45 Q34 18 52 34 Q62 42 70 45 Q62 48 52 56 Q34 72 18 45Z"
+                stroke="currentColor" stroke-width="1.2" fill="none"/>
+          <path d="M122 45 Q106 18 88 34 Q78 42 70 45 Q78 48 88 56 Q106 72 122 45Z"
+                stroke="currentColor" stroke-width="1.2" fill="none"/>
+          <circle cx="70" cy="45" r="7" stroke="currentColor" stroke-width="1.2"/>
+          <circle cx="70" cy="45" r="3" fill="currentColor" opacity="0.4"/>
+          <!-- Tressage interne gauche -->
+          <path d="M25 38 Q38 28 50 36" stroke="currentColor" stroke-width="0.6" opacity="0.5"/>
+          <path d="M22 45 Q35 38 50 42" stroke="currentColor" stroke-width="0.6" opacity="0.4"/>
+          <path d="M25 52 Q38 58 50 54" stroke="currentColor" stroke-width="0.6" opacity="0.5"/>
+          <!-- Tressage interne droit -->
+          <path d="M115 38 Q102 28 90 36" stroke="currentColor" stroke-width="0.6" opacity="0.5"/>
+          <path d="M118 45 Q105 38 90 42" stroke="currentColor" stroke-width="0.6" opacity="0.4"/>
+          <path d="M115 52 Q102 58 90 54" stroke="currentColor" stroke-width="0.6" opacity="0.5"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SLIDERS AVANT/APRÈS — CSS :hover reveal
+     Technique : clip-path animé au hover
+============================================================ -->
+<section class="sliders">
+  <div class="sliders-header">
+    <span class="section-label">Avant / Après</span>
+    <h2 class="section-title">Glissez pour<br><em>révéler.</em></h2>
+    <p class="sliders-intro">
+      Survolez chaque image pour voir la transformation.
+    </p>
+  </div>
+
+  <div class="sliders-grid">
+
+    <!-- Slider 1 — Nœud papillon or -->
+    <div class="slider">
+      <div class="slider-before">
+        <img src="{{ url_for('static', filename='images/a1.jpg') }}"
+             alt="Avant — canette" loading="lazy">
+        <span class="slider-badge slider-badge--av">Avant</span>
+      </div>
+      <div class="slider-after">
+        <img src="{{ url_for('static', filename='images/boucle.jpg') }}"
+             alt="Après — Nœud papillon or" loading="lazy">
+        <span class="slider-badge slider-badge--ap">Après</span>
+      </div>
+      <div class="slider-info">
+        <p class="slider-cat">Nœud papillon</p>
+        <h3 class="slider-nom">L'Or du Sahel</h3>
+      </div>
+    </div>
+
+    <!-- Slider 2 — Nœud papillon rouge -->
+    <div class="slider">
+      <div class="slider-before">
+        <img src="{{ url_for('static', filename='images/a2.jpg') }}"
+             alt="Avant — canette" loading="lazy">
+        <span class="slider-badge slider-badge--av">Avant</span>
+      </div>
+      <div class="slider-after">
+        <img src="{{ url_for('static', filename='images/lunette.jpg') }}"
+             alt="Après — Nœud papillon rouge" loading="lazy">
+        <span class="slider-badge slider-badge--ap">Après</span>
+      </div>
+      <div class="slider-info">
+        <p class="slider-cat">Nœud papillon</p>
+        <h3 class="slider-nom">Feu de Brousse</h3>
+      </div>
+    </div>
+
+    <!-- Slider 3 — Collier -->
+    <div class="slider">
+      <div class="slider-before">
+        <img src="{{ url_for('static', filename='images/a3.jpg') }}"
+             alt="Avant — canettes" loading="lazy">
+        <span class="slider-badge slider-badge--av">Avant</span>
+      </div>
+      <div class="slider-after">
+        <img src="{{ url_for('static', filename='images/noir.jpg') }}"
+             alt="Après — Collier" loading="lazy">
+        <span class="slider-badge slider-badge--ap">Après</span>
+      </div>
+      <div class="slider-info">
+        <p class="slider-cat">Collier</p>
+        <h3 class="slider-nom">Reine du Delta</h3>
+      </div>
+    </div>
+
+    <!-- Slider 4 — Boucles d'oreilles -->
+    <div class="slider">
+      <div class="slider-before">
+        <img src="{{ url_for('static', filename='images/atelier.jpg') }}"
+             alt="Avant — capsules" loading="lazy">
+        <span class="slider-badge slider-badge--av">Avant</span>
+      </div>
+      <div class="slider-after">
+        <img src="{{ url_for('static', filename='images/complet.jpg') }}"
+             alt="Après — Boucles d'oreilles" loading="lazy">
+        <span class="slider-badge slider-badge--ap">Après</span>
+      </div>
+      <div class="slider-info">
+        <p class="slider-cat">Boucles d'oreilles</p>
+        <h3 class="slider-nom">Cercles de Cotonou</h3>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ============================================================
+     MATIÈRES — Ce qu'on utilise
+============================================================ -->
+<section class="matieres">
+  <div class="matieres-inner">
+    <div class="matieres-text">
+      <span class="section-label">Matières</span>
+      <h2 class="section-title">
+        Ce que la rue<br><em>nous offre.</em>
+      </h2>
+      <div class="gold-line"></div>
+      <p class="matieres-body">
+        Tout part du déchet. Les canettes de boisson
+        sont notre aluminium. Les capsules deviennent
+        nos perles. Rien n'est acheté, tout est trouvé,
+        sélectionné, sublimé.
+      </p>
+    </div>
+
+    <div class="matieres-list">
+
+      <div class="matiere">
+        <div class="matiere-avant">
+          <svg viewBox="0 0 60 60" fill="none">
+            <ellipse cx="30" cy="10" rx="14" ry="5" stroke="currentColor" stroke-width="1"/>
+            <rect x="16" y="10" width="28" height="40" rx="3" stroke="currentColor" stroke-width="1"/>
+            <ellipse cx="30" cy="50" rx="14" ry="5" stroke="currentColor" stroke-width="1"/>
+          </svg>
+          <p>Canette</p>
+        </div>
+        <div class="matiere-arrow">→</div>
+        <div class="matiere-apres">
+          <svg viewBox="0 0 60 40" fill="none">
+            <path d="M8 20 Q16 8 24 16 Q30 21 35 20 Q30 19 24 24 Q16 32 8 20Z"
+                  stroke="currentColor" stroke-width="1" fill="none"/>
+            <path d="M62 20 Q54 8 46 16 Q40 21 35 20 Q40 19 46 24 Q54 32 62 20Z"
+                  stroke="currentColor" stroke-width="1" fill="none"/>
+            <circle cx="35" cy="20" r="4" stroke="currentColor" stroke-width="1"/>
+          </svg>
+          <p>Nœud papillon</p>
+        </div>
+      </div>
+
+      <div class="matiere">
+        <div class="matiere-avant">
+          <svg viewBox="0 0 60 60" fill="none">
+            <circle cx="30" cy="30" r="18" stroke="currentColor" stroke-width="1"/>
+            <circle cx="30" cy="30" r="8" stroke="currentColor" stroke-width="1"/>
+            <circle cx="30" cy="30" r="2" fill="currentColor" opacity="0.4"/>
+          </svg>
+          <p>Capsule</p>
+        </div>
+        <div class="matiere-arrow">→</div>
+        <div class="matiere-apres">
+          <svg viewBox="0 0 60 60" fill="none">
+            <circle cx="30" cy="30" r="22" stroke="currentColor" stroke-width="1"/>
+            <circle cx="30" cy="30" r="14" stroke="currentColor" stroke-width="0.7" opacity="0.5"/>
+            <circle cx="30" cy="30" r="6" stroke="currentColor" stroke-width="0.7" opacity="0.3"/>
+            <line x1="8" y1="30" x2="52" y2="30" stroke="currentColor" stroke-width="0.5" opacity="0.3"/>
+            <line x1="30" y1="8" x2="30" y2="52" stroke="currentColor" stroke-width="0.5" opacity="0.3"/>
+          </svg>
+          <p>Boucle d'oreille</p>
+        </div>
+      </div>
+
+      <div class="matiere">
+        <div class="matiere-avant">
+          <svg viewBox="0 0 60 20" fill="none">
+            <rect x="2" y="6" width="56" height="8" rx="4" stroke="currentColor" stroke-width="1"/>
+            <rect x="8" y="6" width="10" height="8" fill="currentColor" opacity="0.1"/>
+            <rect x="22" y="6" width="10" height="8" fill="currentColor" opacity="0.1"/>
+            <rect x="36" y="6" width="10" height="8" fill="currentColor" opacity="0.1"/>
+          </svg>
+          <p>Bande d'alu</p>
+        </div>
+        <div class="matiere-arrow">→</div>
+        <div class="matiere-apres">
+          <svg viewBox="0 0 70 30" fill="none">
+            <path d="M5 15 Q15 5 25 15 Q35 25 45 15 Q55 5 65 15" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+            <circle cx="5"  cy="15" r="3" stroke="currentColor" stroke-width="0.8"/>
+            <circle cx="65" cy="15" r="3" stroke="currentColor" stroke-width="0.8"/>
+          </svg>
+          <p>Collier</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     CHIFFRES CLÉS
+============================================================ -->
+<section class="tr-chiffres">
+  <div class="tr-chiffres-inner">
+
+    <div class="tr-chiffre">
+      <span class="tr-chiffre-num">~12</span>
+      <span class="tr-chiffre-label">Canettes par nœud papillon</span>
+    </div>
+
+    <div class="tr-chiffre-sep"></div>
+
+    <div class="tr-chiffre">
+      <span class="tr-chiffre-num">0</span>
+      <span class="tr-chiffre-label">Gramme de déchet produit</span>
+    </div>
+
+    <div class="tr-chiffre-sep"></div>
+
+    <div class="tr-chiffre">
+      <span class="tr-chiffre-num">100%</span>
+      <span class="tr-chiffre-label">Aluminium récupéré</span>
+    </div>
+
+    <div class="tr-chiffre-sep"></div>
+
+    <div class="tr-chiffre">
+      <span class="tr-chiffre-num">∞</span>
+      <span class="tr-chiffre-label">Combinaisons possibles</span>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ============================================================
+     CTA
+============================================================ -->
+<section class="tr-cta">
+  <div class="tr-cta-inner">
+    <span class="section-label">À vous</span>
+    <h2 class="section-title">
+      Portez<br><em>la transformation.</em>
+    </h2>
+    <p class="tr-cta-sub">
+      Ces pièces uniques attendent leur propriétaire.
+    </p>
+    <div class="tr-cta-btns">
+      <a href="{{ url_for('collection') }}" class="btn">
+        <span>Voir la collection</span>
+      </a>
+      <a href="{{ url_for('contact') }}" class="btn btn--ghost">
+        <span>Commander</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <p class="footer-brand-name">Véronique</p>
+      <p class="footer-brand-tag">Collection</p>
+      <p class="footer-brand-desc">
+        Bijoux artisanaux en canettes recyclées,<br>
+        fabriqués à la main au Bénin.
+      </p>
+    </div>
+    <div>
+      <p class="footer-col-title">Navigation</p>
+      <ul class="footer-col-links">
+        <li><a href="{{ url_for('index') }}">Accueil</a></li>
+        <li><a href="{{ url_for('collection') }}">Collection</a></li>
+        <li><a href="{{ url_for('transformation') }}">Transformation</a></li>
+        <li><a href="{{ url_for('atelier') }}">Atelier</a></li>
+        <li><a href="{{ url_for('contact') }}">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-col-title">Nous suivre</p>
+      <div class="footer-social">
+        <a href="https://wa.me/22900000000" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </a>
+        <a href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+        <a href="https://tiktok.com/" target="_blank" rel="noopener" aria-label="TikTok">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.75a4.85 4.85 0 01-1.01-.06z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Collection Véronique. Tous droits réservés.</p>
+    <p>Créé par <span>Djangoun Zinli Roberto</span></p>
+  </div>
+</footer>
+
+</body>
+</html>

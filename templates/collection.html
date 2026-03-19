@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Collection — VÉRONIQUE</title>
+  <meta name="description" content="Collection Véronique — Bijoux artisanaux en canettes recyclées. Nœuds papillons, colliers, boucles d'oreilles, bracelets.">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/collection.css') }}">
+</head>
+<body>
+
+<!-- ============================================================
+     NAVIGATION
+============================================================ -->
+<nav class="nav nav--solid">
+  <div class="nav-logo">
+    <a href="{{ url_for('index') }}">VÉRONIQUE</a>
+    <span class="nav-logo-sub">Collection</span>
+  </div>
+  <input type="checkbox" id="navToggle" class="nav-toggle">
+  <label for="navToggle" class="nav-burger" aria-label="Menu">
+    <span></span><span></span>
+  </label>
+  <ul class="nav-links">
+    <li><a href="{{ url_for('index') }}"          class="nav-link">Accueil</a></li>
+    <li><a href="{{ url_for('collection') }}"     class="nav-link active">Collection</a></li>
+    <li><a href="{{ url_for('transformation') }}" class="nav-link">Transformation</a></li>
+    <li><a href="{{ url_for('atelier') }}"        class="nav-link">Atelier</a></li>
+    <li><a href="{{ url_for('contact') }}"        class="nav-link nav-link--cta">Contact</a></li>
+  </ul>
+</nav>
+
+
+<!-- ============================================================
+     EN-TÊTE
+============================================================ -->
+<header class="page-header">
+  <div class="page-header-inner">
+    <span class="section-label">Saison 2025</span>
+    <h1 class="page-header-title">
+      Collection<br><em>Véronique</em>
+    </h1>
+    <p class="page-header-sub">
+      Bijoux artisanaux nés de canettes recyclées.<br>
+      Chaque pièce est unique, fabriquée à la main au Bénin.
+    </p>
+  </div>
+  <div class="page-header-stats">
+    <div class="h-stat">
+      <span class="h-stat-num">18</span>
+      <span class="h-stat-label">Pièces</span>
+    </div>
+    <div class="h-stat-sep"></div>
+    <div class="h-stat">
+      <span class="h-stat-num">4</span>
+      <span class="h-stat-label">Catégories</span>
+    </div>
+    <div class="h-stat-sep"></div>
+    <div class="h-stat">
+      <span class="h-stat-num">100%</span>
+      <span class="h-stat-label">Artisanal</span>
+    </div>
+  </div>
+</header>
+
+
+<!-- ============================================================
+     FILTRES + GALERIE
+============================================================ -->
+<section class="galerie-section">
+
+  <input type="radio" name="cat" id="f-tout"     class="f-input" checked>
+  <input type="radio" name="cat" id="f-noeud"    class="f-input">
+  <input type="radio" name="cat" id="f-collier"  class="f-input">
+  <input type="radio" name="cat" id="f-boucles"  class="f-input">
+  <input type="radio" name="cat" id="f-bracelet" class="f-input">
+
+  <div class="filtres">
+    <label for="f-tout"     class="filtre">Tout</label>
+    <label for="f-noeud"    class="filtre">Nœud papillon</label>
+    <label for="f-collier"  class="filtre">Collier</label>
+    <label for="f-boucles"  class="filtre">Boucles d'oreilles</label>
+    <label for="f-bracelet" class="filtre">Bracelet</label>
+  </div>
+
+  <div class="galerie">
+
+    <!-- NŒUDS PAPILLONS -->
+    <article class="card cat-noeud">
+      <a href="#lb-1" class="card-link">
+        <div class="card-img">
+          <img src="{{ url_for('static', filename='images/boucle.jpg') }}" alt="L'Or du Sahel" loading="lazy">
+          <div class="card-hover"><span class="card-loupe">+</span></div>
+        </div>
+        <div class="card-info">
+          <p class="card-cat">Nœud papillon</p>
+          <h3 class="card-nom">L'Or du Sahel</h3>
+          <p class="card-detail">Aluminium doré · Pièce unique</p>
+        </div>
+      </a>
+    </article>
+
+    <article class="card cat-noeud card--tall">
+      <a href="#lb-2" class="card-link">
+        <div class="card-img">
+          <img src="{{ url_for('static', filename='images/manequin.jpg') }}" alt="Feu de Brousse" loading="lazy">
+          <div class="card-hover"><span class="card-loupe">+</span></div>
+        </div>
+        <div class="card-info">
+          <p class="card-cat">Nœud papillon</p>
+          <h3 class="card-nom">Feu de Brousse</h3>
+          <p class="card-detail">Aluminium rouge · Pièce unique</p>
+        </div>
+      </a>
+    </article>
+
+    <article class="card cat-noeud">
+      <a href="#lb-3" class="card-link">
+        <div class="card-img">
+          <img src="{{ url_for('static', filename='images/noir.jpg') }}" alt="Nuit d'Abomey" loading="lazy">
+          <div class="card-hover"><span class="card-loupe">+</span></div>
+        </div>
+        <div class="card-info">
+          <p class="card-cat">Nœud papillon</p>
+          <h3 class="card-nom">Nuit d'Abomey</h3>
+          <p class="card-detail">Aluminium noir · Pièce unique</p>
+        </div>
+      </a>
+    </article>
+
+    <article class="card cat-noeud">
+      <a href="#lb-4" class="card-link">
+        <div class="card-img">
+          <img src="{{ url_for('static', filename='images/complet.jpg') }}" alt="Argent du Fleuve" loading="lazy">
+          <div class="card-hover"><span class="card-loupe">+</span></div>
+        </div>
+        <div class="card-info">
+          <p class="card-cat">Nœud papillon</p>
+          <h3 class="card-nom">Argent du Fleuve</h3>
+          <p class="card-detail">Aluminium argenté · Pièce unique</p>
+        </div>
+      </a>
+    </article>
+
+    <!-- COLLIERS -->
+    <article class="card cat-collier card--wide">
+      <a href="#lb-5" class="card-link">
+        <div class="card-img">
+          <img src="{{ url_for('static', filename='images/pose.jpg') }}" alt="Reine du Delta" loading="lazy">
+          <div class="card-hover"><span class="card-loupe">+</span></div>
+        </div>
+        <div class="card-info">
+          <p class="card-cat">Collier</p>
+          <h3 class="card-nom">Reine du Delta</h3>
+          <p class="card-detail">Chaîne aluminium doré · Pièce unique</p>
+        </div>
+      </a>
+    </article>
+
+    <article class="card cat-collier">
+      <a href="#lb-6" class="card-link">
+        <div class="card-img">
+          <img src="{{ url_for('static', filename='images/nappe.jpg') }}" alt="Labyrinthe" loading="lazy">
+          <div class="card-hover"><span class="card-loupe">+</span></div>
+        </div>
+        <div class="card-info">
+          <p class="card-cat">Collier</p>
+          <h3 class="card-nom">Labyrinthe</h3>
+          <p class="card-detail">Maillons tressés · Pièce unique</p>
+        </div>
+      </a>
+    </article>
+
+    <!-- BOUCLES D'OREILLES -->
+    <article class="card cat-boucles">
+      <a href="#lb-7" class="card-link">
+        <div class="card-img">
+          <img src="{{ url_for('static', filename='images/complett.jpg') }}" alt="Cercles de Cotonou" loading="lazy">
+          <div class="card-hover"><span class="card-loupe">+</span></div>
+        </div>
+        <div class="card-info">
+          <p class="card-cat">Boucles d'oreilles</p>
+          <h3 class="card-nom">Cercles de Cotonou</h3>
+          <p class="card-detail">Anneaux aluminium · Paire</p>
+        </div>
+      </a>
+    </article>
+
+    <article class="card cat-boucles card--tall">
+      <a href="#lb-8" class="card-link">
+        <div class="card-img">
+          <img src="{{ url_for('static', filename='images/chapeau.jpg') }}" alt="Étoile du Bénin" loading="lazy">
+          <div class="card-hover"><span class="card-loupe">+</span></div>
+        </div>
+        <div class="card-info">
+          <p class="card-cat">Boucles d'oreilles</p>
+          <h3 class="card-nom">Étoile du Bénin</h3>
+          <p class="card-detail">Pendantes or · Paire</p>
+        </div>
+      </a>
+    </article>
+
+    <!-- BRACELETS -->
+    <article class="card cat-bracelet">
+      <a href="#lb-9" class="card-link">
+        <div class="card-img">
+          <img src="{{ url_for('static', filename='images/malette.jpg') }}" alt="Serpent d'Or" loading="lazy">
+          <div class="card-hover"><span class="card-loupe">+</span></div>
+        </div>
+        <div class="card-info">
+          <p class="card-cat">Bracelet</p>
+          <h3 class="card-nom">Serpent d'Or</h3>
+          <p class="card-detail">Tressé aluminium · Ajustable</p>
+        </div>
+      </a>
+    </article>
+
+    <article class="card cat-bracelet card--tall">
+      <a href="#lb-10" class="card-link">
+        <div class="card-img">
+          <img src="{{ url_for('static', filename='images/cravate.jpg') }}" alt="Harmattan" loading="lazy">
+          <div class="card-hover"><span class="card-loupe">+</span></div>
+        </div>
+        <div class="card-info">
+          <p class="card-cat">Bracelet</p>
+          <h3 class="card-nom">Harmattan</h3>
+          <p class="card-detail">Aluminium brut · Ajustable</p>
+        </div>
+      </a>
+    </article>
+
+  </div>
+</section>
+
+
+<!-- ============================================================
+     LIGHTBOXES CSS :target
+============================================================ -->
+<div class="lb" id="lb-1"><a href="#" class="lb-bg"></a><div class="lb-box"><a href="#" class="lb-close">&#215;</a><img src="{{ url_for('static', filename='images/a.jpg') }}" alt="L'Or du Sahel"><div class="lb-caption"><p class="lb-nom">L'Or du Sahel</p><p class="lb-det">Nœud papillon · Aluminium doré · Pièce unique</p></div></div></div>
+<div class="lb" id="lb-2"><a href="#" class="lb-bg"></a><div class="lb-box"><a href="#" class="lb-close">&#215;</a><img src="{{ url_for('static', filename='images/b.jpg') }}" alt="Feu de Brousse"><div class="lb-caption"><p class="lb-nom">Feu de Brousse</p><p class="lb-det">Nœud papillon · Aluminium rouge · Pièce unique</p></div></div></div>
+<div class="lb" id="lb-3"><a href="#" class="lb-bg"></a><div class="lb-box"><a href="#" class="lb-close">&#215;</a><img src="{{ url_for('static', filename='images/c.jpg') }}" alt="Nuit d'Abomey"><div class="lb-caption"><p class="lb-nom">Nuit d'Abomey</p><p class="lb-det">Nœud papillon · Aluminium noir · Pièce unique</p></div></div></div>
+<div class="lb" id="lb-4"><a href="#" class="lb-bg"></a><div class="lb-box"><a href="#" class="lb-close">&#215;</a><img src="{{ url_for('static', filename='images/d.jpg') }}" alt="Argent du Fleuve"><div class="lb-caption"><p class="lb-nom">Argent du Fleuve</p><p class="lb-det">Nœud papillon · Aluminium argenté · Pièce unique</p></div></div></div>
+<div class="lb" id="lb-5"><a href="#" class="lb-bg"></a><div class="lb-box"><a href="#" class="lb-close">&#215;</a><img src="{{ url_for('static', filename='images/e.jpg') }}" alt="Reine du Delta"><div class="lb-caption"><p class="lb-nom">Reine du Delta</p><p class="lb-det">Collier · Chaîne aluminium doré · Pièce unique</p></div></div></div>
+<div class="lb" id="lb-6"><a href="#" class="lb-bg"></a><div class="lb-box"><a href="#" class="lb-close">&#215;</a><img src="{{ url_for('static', filename='images/f.jpg') }}" alt="Labyrinthe"><div class="lb-caption"><p class="lb-nom">Labyrinthe</p><p class="lb-det">Collier · Maillons tressés · Pièce unique</p></div></div></div>
+<div class="lb" id="lb-7"><a href="#" class="lb-bg"></a><div class="lb-box"><a href="#" class="lb-close">&#215;</a><img src="{{ url_for('static', filename='images/g.jpg') }}" alt="Cercles de Cotonou"><div class="lb-caption"><p class="lb-nom">Cercles de Cotonou</p><p class="lb-det">Boucles d'oreilles · Anneaux aluminium · Paire</p></div></div></div>
+<div class="lb" id="lb-8"><a href="#" class="lb-bg"></a><div class="lb-box"><a href="#" class="lb-close">&#215;</a><img src="{{ url_for('static', filename='images/h.jpg') }}" alt="Étoile du Bénin"><div class="lb-caption"><p class="lb-nom">Étoile du Bénin</p><p class="lb-det">Boucles d'oreilles · Pendantes or · Paire</p></div></div></div>
+<div class="lb" id="lb-9"><a href="#" class="lb-bg"></a><div class="lb-box"><a href="#" class="lb-close">&#215;</a><img src="{{ url_for('static', filename='images/i.jpg') }}" alt="Serpent d'Or"><div class="lb-caption"><p class="lb-nom">Serpent d'Or</p><p class="lb-det">Bracelet · Tressé aluminium · Ajustable</p></div></div></div>
+<div class="lb" id="lb-10"><a href="#" class="lb-bg"></a><div class="lb-box"><a href="#" class="lb-close">&#215;</a><img src="{{ url_for('static', filename='images/j.jpg') }}" alt="Harmattan"><div class="lb-caption"><p class="lb-nom">Harmattan</p><p class="lb-det">Bracelet · Aluminium brut · Ajustable</p></div></div></div>
+
+
+<!-- ============================================================
+     CTA COMMANDE
+============================================================ -->
+<section class="coll-cta">
+  <div class="coll-cta-inner">
+    <span class="section-label">Commander</span>
+    <h2 class="section-title">Une pièce vous<br><em>a conquis ?</em></h2>
+    <p class="coll-cta-sub">
+      Chaque création est disponible à la commande.<br>
+      Contactez-nous pour réserver votre pièce unique.
+    </p>
+    <div class="coll-cta-btns">
+      <a href="{{ url_for('contact') }}" class="btn"><span>Prendre contact</span></a>
+      <a href="https://wa.me/22900000000?text=Bonjour,%20je%20suis%20intéressé%20par%20la%20Collection%20Véronique"
+         target="_blank" rel="noopener" class="btn btn-wa">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <span>WhatsApp</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <p class="footer-brand-name">Véronique</p>
+      <p class="footer-brand-tag">Collection</p>
+      <p class="footer-brand-desc">Bijoux artisanaux en canettes recyclées,<br>fabriqués à la main au Bénin.</p>
+    </div>
+    <div>
+      <p class="footer-col-title">Navigation</p>
+      <ul class="footer-col-links">
+        <li><a href="{{ url_for('index') }}">Accueil</a></li>
+        <li><a href="{{ url_for('collection') }}">Collection</a></li>
+        <li><a href="{{ url_for('transformation') }}">Transformation</a></li>
+        <li><a href="{{ url_for('atelier') }}">Atelier</a></li>
+        <li><a href="{{ url_for('contact') }}">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-col-title">Nous suivre</p>
+      <div class="footer-social">
+        <a href="https://wa.me/22900000000" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </a>
+        <a href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+        <a href="https://tiktok.com/" target="_blank" rel="noopener" aria-label="TikTok">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.75a4.85 4.85 0 01-1.01-.06z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Collection Véronique. Tous droits réservés.</p>
+    <p>Créé par <span>Djangoun Zinli Roberto</span></p>
+  </div>
+</footer>
+
+</body>
+</html>
